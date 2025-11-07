@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: _output
+
+website:
+  title: 'Quarto Review Example'
+  navbar:
+    left:
+      - text: 'Home'
+        file: document.qmd
+      - text: 'Debug'
+        file: debug-example.qmd
+      - text: 'Translation'
+        file: doc-translation.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+review:
+  enabled: true
+  debug:
+    enabled: true
+    level: debug
+  git:
+    provider: github
+    owner: mvwestendorp
+    repo: quarto-review-extension-github-demo-new
+    base-branch: main # optional; defaults to `main`
+    auth:
+      mode: pat
+filters:
+  - review
